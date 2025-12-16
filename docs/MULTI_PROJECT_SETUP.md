@@ -49,9 +49,9 @@ Edit: `Library/.../ProjectName/dot_claude/settings.local.json.tmpl`
 
 ::: v-pre
 ```json
-{{- $projectPath := "/Users/joe/PATH/TO/PROJECT" -}}
-{{- $projectName := "MyProject" -}}
-{{- $projectType := "code" -}}  // Options: dotfiles, manga, code, general
+\\{\\{- $projectPath := "/Users/joe/PATH/TO/PROJECT" -\\}\\}
+\\{\\{- $projectName := "MyProject" -\\}\\}
+\\{\\{- $projectType := "code" -\\}\\}  // Options: dotfiles, manga, code, general
 ```
 :::
 
@@ -113,26 +113,26 @@ Templates support chezmoi variables:
 {
   "permissions": {
     "allow": [
-      "Read(//{{ $projectPath }}/**)",
-      "Edit({{ $projectPath }}/docs/**)",
-      "Write({{ $projectPath }}/output/**)"
+      "Read(//\\{\\{ $projectPath \\}\\}/**)",
+      "Edit(\\{\\{ $projectPath \\}\\}/docs/**)",
+      "Write(\\{\\{ $projectPath \\}\\}/output/**)"
     ]
   },
   "env": {
-    "PROJECT_ROOT": "{{ $projectPath }}",
-    "USER_HOME": "{{ .chezmoi.homeDir }}",
-    "USERNAME": "{{ .chezmoi.username }}"
+    "PROJECT_ROOT": "\\{\\{ $projectPath \\}\\}",
+    "USER_HOME": "\\{\\{ .chezmoi.homeDir \\}\\}",
+    "USERNAME": "\\{\\{ .chezmoi.username \\}\\}"
   }
 }
 ```
 :::
 
 **Available variables**:
-- `{{ $projectPath }}` - Full project path
-- `{{ $projectName }}` - Project name
-- `{{ .chezmoi.homeDir }}` - /Users/username
-- `{{ .chezmoi.username }}` - username
-- `{{ .chezmoi.sourceDir }}` - ~/.local/share/chezmoi
+- `\\{\\{ $projectPath \\}\\}` - Full project path
+- `\\{\\{ $projectName \\}\\}` - Project name
+- `\\{\\{ .chezmoi.homeDir \\}\\}` - /Users/username
+- `\\{\\{ .chezmoi.username \\}\\}` - username
+- `\\{\\{ .chezmoi.sourceDir \\}\\}` - ~/.local/share/chezmoi
 
 ## Managing Multiple Projects
 
