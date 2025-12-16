@@ -24,6 +24,10 @@ hero:
   trust:
     - "Docs build: pass · Tests: ~640 (BATS) · Updated: 2025-12-16"
     - "Secrets: 1Password templating, no secrets in git · Repo: https://github.com/Aristoddle/beppe-system-bootstrap · Issues: /issues"
+  badges:
+    - "Docs build: ✅"
+    - "Tests: ~640"
+    - "Updated: 2025-12-16"
 features:
   - title: Curated CLI Stack
     details: zsh + OMZ + Powerlevel10k, fzf, eza, zoxide, direnv, lazygit, mise/pyenv—pre-tuned.
