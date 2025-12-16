@@ -15,7 +15,7 @@ export default defineConfig({
   lastUpdated: true,
   cleanUrls: true,
   themeConfig: {
-    logo: '/favicon.ico',
+    logo: '/beppe-dotfiles-docs/favicon.ico',
     siteTitle: 'Beppe Dotfiles',
     nav: [
       { text: 'Home', link: '/' },
