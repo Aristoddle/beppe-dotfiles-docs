@@ -1,7 +1,11 @@
 import { defineConfig } from 'vitepress'
 
 const base =
-  process.env.BASE_URL?.endsWith('/') ? process.env.BASE_URL : (process.env.BASE_URL ? `${process.env.BASE_URL}/` : '/beppe-system-bootstrap/')
+  process.env.BASE_URL?.endsWith('/')
+    ? process.env.BASE_URL
+    : process.env.BASE_URL
+    ? `${process.env.BASE_URL}/`
+    : '/beppe-dotfiles-docs/'
 
 export default defineConfig({
   title: 'Beppe System Bootstrap',
