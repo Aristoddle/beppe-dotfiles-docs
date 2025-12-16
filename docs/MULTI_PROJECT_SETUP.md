@@ -106,6 +106,7 @@ ls -la /PATH/TO/PROJECT/.claude/settings.local.json
 
 Templates support chezmoi variables:
 
+::: v-pre
 ```json
 {
   "permissions": {
@@ -122,6 +123,7 @@ Templates support chezmoi variables:
   }
 }
 ```
+:::
 
 **Available variables**:
 - `{{ $projectPath }}` - Full project path
