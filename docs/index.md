@@ -18,6 +18,9 @@ hero:
     - theme: alt
       text: Pick Version (bazzite/main)
       link: /versions/bazzite/
+    - theme: alt
+      text: Testing & Quality
+      link: /TESTING
 features:
   - title: Curated CLI Stack
     details: zsh + OMZ + Powerlevel10k, fzf, eza, zoxide, direnv, lazygit, mise/pyenv—pre-tuned.
@@ -39,6 +42,7 @@ features:
 - **Runtimes:** mise for multi-language; pyenv for Python venvs; optional source-built core toolchain.  
 - **Automation:** health checks, agent libraries, and scripts to keep installs reproducible.  
 - **Docs:** Quickstart, Setup, ChezMoi guide, architecture, troubleshooting, platform notes.  
+- **Quality:** ~640 tests (BATS), strict docs build, no secrets in git (1Password templating).
 
 ## Quick Links
 
@@ -46,6 +50,7 @@ features:
 - [ChezMoi Guide](/CHEZMOI_GUIDE) · [Agents & Skills](/CLAUDE_CODE_AGENTS_SKILLS)  
 - [Platform Differences](/PLATFORM_DIFFERENCES) · [Using Bazzite](/USING_BAZZITE)  
 - [VPN / Torrents](/VPN_TORRENT) · [Recovery Quick Reference](/RECOVERY_QUICK_REFERENCE)
+- [Testing & Quality](/TESTING)
 
 ## Deploy
 
@@ -65,3 +70,8 @@ chezmoi init --apply https://github.com/Aristoddle/beppe-system-bootstrap.git
 - **bazzite**: Steam Deck / HTPC (Bazzite defaults)
 - **main**: Generic macOS + Linux
 Use the navbar “Version” dropdown; docs and examples match the selected version.
+
+### Platform & safety at a glance
+- Platforms: macOS • Linux/WSL • Bazzite (Steam Deck)
+- Secrets: 1Password templating; nothing sensitive in git; site set to noindex.
+- Tests: ~640 BATS tests; docs build is CI-enforced.
