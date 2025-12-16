@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: Agents & Skills
       link: /CLAUDE_CODE_AGENTS_SKILLS
+    - theme: alt
+      text: Pick Version (bazzite/main)
+      link: /versions/bazzite/
 features:
   - title: Curated CLI Stack
     details: zsh + OMZ + Powerlevel10k, fzf, eza, zoxide, direnv, lazygit, mise/pyenv—pre-tuned.
@@ -42,6 +45,7 @@ features:
 - [Quickstart](/QUICKSTART) · [Setup](/SETUP) · [Troubleshooting](/TROUBLESHOOTING)  
 - [ChezMoi Guide](/CHEZMOI_GUIDE) · [Agents & Skills](/CLAUDE_CODE_AGENTS_SKILLS)  
 - [Platform Differences](/PLATFORM_DIFFERENCES) · [Using Bazzite](/USING_BAZZITE)  
+- [VPN / Torrents](/VPN_TORRENT) · [Recovery Quick Reference](/RECOVERY_QUICK_REFERENCE)
 
 ## Deploy
 
@@ -56,3 +60,8 @@ chezmoi init --apply https://github.com/Aristoddle/beppe-system-bootstrap.git
 ```
 
 > Need help? Run `dotfiles doctor` after apply, or see [TROUBLESHOOTING](/TROUBLESHOOTING).
+
+### Version picker
+- **bazzite**: Steam Deck / HTPC (Bazzite defaults)
+- **main**: Generic macOS + Linux
+Use the navbar “Version” dropdown; docs and examples match the selected version.
