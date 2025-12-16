@@ -56,7 +56,8 @@ export default defineConfig({
         items: [
           { text: 'Architecture', link: '/ARCHITECTURE' },
           { text: 'Dotfiles Standards', link: '/DOTFILES_STANDARDS' },
-          { text: 'Platform Differences', link: '/PLATFORM_DIFFERENCES' }
+          { text: 'Platform Differences', link: '/PLATFORM_DIFFERENCES' },
+          { text: 'Testing & Quality', link: '/TESTING' }
         ]
       },
       {
