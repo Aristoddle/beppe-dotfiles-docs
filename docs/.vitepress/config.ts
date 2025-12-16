@@ -58,6 +58,8 @@ export default defineConfig({
           { text: 'Dotfiles Standards', link: '/DOTFILES_STANDARDS' },
           { text: 'Platform Differences', link: '/PLATFORM_DIFFERENCES' },
           { text: 'Testing & Quality', link: '/TESTING' }
+          ,
+          { text: 'Tools Reference', link: '/TOOLS' }
         ]
       },
       {
