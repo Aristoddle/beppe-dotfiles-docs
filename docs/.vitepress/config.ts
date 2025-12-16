@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 const base = '/beppe-dotfiles-docs/'
 
 export default defineConfig({
-  title: 'Beppe System Bootstrap',
+  title: "Beppe's System Bootstrap",
   description: 'Zero‑friction dotfiles with agents, secrets, and a modern CLI stack.',
   lang: 'en-US',
   base,
@@ -16,7 +16,7 @@ export default defineConfig({
   cleanUrls: true,
   themeConfig: {
     logo: '/beppe-dotfiles-docs/favicon.ico',
-    siteTitle: 'Beppe Dotfiles',
+    siteTitle: "Beppe's System Bootstrap",
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Quickstart', link: '/QUICKSTART' },
