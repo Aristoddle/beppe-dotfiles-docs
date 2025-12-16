@@ -827,21 +827,21 @@ done
 ### Documentation
 
 - [BATS Core Documentation](https://bats-core.readthedocs.io/)
-- [Test Suite README](../tests/README.md)
-- [Test Helper Functions](../tests/test_helper.bash)
+- Test Suite README (see tests folder in private repo)
+- Test Helper Functions (`tests/test_helper.bash`)
 
 ### Templates
 
-- [Unit Test Template](../tests/templates/unit_test_template.bats)
-- [Integration Test Template](../tests/templates/integration_test_template.bats)
-- [Edge Case Test Template](../tests/templates/edge_case_test_template.bats)
+- Unit Test Template (`tests/templates/unit_test_template.bats`)
+- Integration Test Template (`tests/templates/integration_test_template.bats`)
+- Edge Case Test Template (`tests/templates/edge_case_test_template.bats`)
 
 ### Examples
 
-- [Smart Wrappers Tests](../tests/unit/smart_wrappers_test.bats) - 15 tests
-- [Git Utils Tests](../tests/unit/git_utils_test.bats) - 12 tests
-- [Shell Startup Tests](../tests/integration/shell_startup_test.bats) - 6 tests
-- [mise Integration Tests](../tests/integration/mise_integration_test.bats) - 22 tests
+- Smart Wrappers Tests (`tests/unit/smart_wrappers_test.bats`) - 15 tests
+- Git Utils Tests (`tests/unit/git_utils_test.bats`) - 12 tests
+- Shell Startup Tests (`tests/integration/shell_startup_test.bats`) - 6 tests
+- mise Integration Tests (`tests/integration/mise_integration_test.bats`) - 22 tests
 
 ## Quick Reference
 

@@ -36,7 +36,7 @@ This test helper infrastructure provides a **modern, modular approach** to writi
 
 ### Philosophy
 
-Following [CLAUDE.md](../CLAUDE.md) testing principles:
+Following our CLAUDE testing principles (see [Agents & Skills](/CLAUDE_CODE_AGENTS_SKILLS)):
 
 - **DRY**: Helpers for common patterns
 - **Defensive**: Handle edge cases gracefully

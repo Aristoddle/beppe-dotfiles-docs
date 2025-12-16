@@ -511,7 +511,7 @@ chezmoi add --dry-run ~/.newfile
 
 - [BOOTSTRAP.md](BOOTSTRAP.md) - Bootstrap process and automation
 - [SETUP.md](SETUP.md) - Platform-specific setup instructions
-- [README.md](../README.md) - Project overview and quick start
+- [Home](/) - Project overview and quick start
 - [TROUBLESHOOTING.md](TROUBLESHOOTING.md) - Common issues and solutions
 - [chezmoi Official Docs](https://www.chezmoi.io/) - Complete chezmoi documentation
 
