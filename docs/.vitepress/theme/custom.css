@@ -1,0 +1,23 @@
+:root {
+  /* defaults already fine */
+}
+
+/* Bazzite / Steam Deck accent */
+.bazzite-theme {
+  --vp-c-brand: #7bd3ff;
+  --vp-c-brand-light: #9be2ff;
+  --vp-c-brand-lighter: #c4f0ff;
+  --vp-c-brand-dark: #49b7e8;
+  --vp-c-brand-darker: #2c93bd;
+}
+
+/* macOS accent (blue) */
+.mac-theme {
+  --vp-c-brand: #0a84ff;
+  --vp-c-brand-light: #4aa3ff;
+  --vp-c-brand-lighter: #a5ccff;
+  --vp-c-brand-dark: #0060d6;
+  --vp-c-brand-darker: #0047a3;
+}
+
+/* main stays default */

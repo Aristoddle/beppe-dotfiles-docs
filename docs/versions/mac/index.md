@@ -1,5 +1,6 @@
 ---
 title: mac version
+pageClass: mac-theme
 ---
 
 # mac (macOS) Notes

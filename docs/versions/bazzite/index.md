@@ -1,5 +1,6 @@
 ---
 title: bazzite version
+pageClass: bazzite-theme
 ---
 
 # bazzite (Steam Deck / HTPC)
