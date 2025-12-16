@@ -16,8 +16,8 @@ hero:
       text: Agents & Skills
       link: /CLAUDE_CODE_AGENTS_SKILLS
     - theme: alt
-      text: Pick Version (bazzite/main)
-      link: /versions/bazzite/
+      text: Pick Version (mac/bazzite/main)
+      link: /versions/
     - theme: alt
       text: Testing & Quality
       link: /TESTING

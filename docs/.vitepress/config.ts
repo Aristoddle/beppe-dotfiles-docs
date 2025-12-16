@@ -26,8 +26,9 @@ export default defineConfig({
       {
         text: 'Version',
         items: [
-          { text: 'bazzite', link: '/beppe-system-bootstrap/versions/bazzite/' },
-          { text: 'main', link: '/beppe-system-bootstrap/versions/main/' }
+          { text: 'mac', link: '/versions/mac/' },
+          { text: 'bazzite', link: '/versions/bazzite/' },
+          { text: 'main', link: '/versions/main/' }
         ]
       }
     ],
