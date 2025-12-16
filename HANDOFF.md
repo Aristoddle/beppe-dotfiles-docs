@@ -42,3 +42,8 @@ _Date: 2025-12-16 • Source: Codex CLI • Status: clean_
 - Fix favicon visibility (absolute URL/cache-bust). 
 - Optional: add repo/issues button to nav; badge row for build/tests in private README (already handled privately).
 - Keep base path and strict links when modifying config.
+
+Priority if time is short
+- Fix favicon (user-facing) while keeping base path intact.
+- After mac review, port any delta tweaks back to main/bazzite as needed.
+- Minor polish (nav CTA, badges) last.
