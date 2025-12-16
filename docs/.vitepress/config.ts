@@ -12,6 +12,7 @@ export default defineConfig({
     ['meta', { name: 'robots', content: 'noindex,nofollow' }],
     ['meta', { name: 'theme-color', content: '#111827' }]
   ],
+  srcExclude: ['**/MULTI_PROJECT_SETUP.md'],
   lastUpdated: true,
   cleanUrls: true,
   themeConfig: {
