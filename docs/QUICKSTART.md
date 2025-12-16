@@ -417,6 +417,9 @@ dotfiles status               # System health check
 ║   dotfiles update         Update everything                  ║
 ║   cd ~/.local/share/chezmoi   Go to source                   ║
 ║   git status              Check uncommitted changes          ║
+║   dotfiles auth status    Verify 1Password/gh/op auth        ║
+║   chezmoi apply --exclude=dotfiles  Pause deployment         ║
+║   chezmoi destroy         Remove managed files (preview w/ diff) ║
 ║                                                              ║
 ║ DEVELOPMENT                                                  ║
 ║   pyinit <name>           Python project                     ║
