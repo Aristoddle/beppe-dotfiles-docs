@@ -23,7 +23,7 @@ hero:
       link: /TESTING
   trust:
     - "Docs build: pass · Tests: ~640 (BATS) · Updated: 2025-12-16"
-    - "Secrets: 1Password templating, no secrets in git · Repo: https://github.com/Aristoddle/beppe-system-bootstrap"
+    - "Secrets: 1Password templating, no secrets in git · Repo: https://github.com/Aristoddle/beppe-system-bootstrap · Issues: /issues"
 features:
   - title: Curated CLI Stack
     details: zsh + OMZ + Powerlevel10k, fzf, eza, zoxide, direnv, lazygit, mise/pyenv—pre-tuned.
@@ -82,3 +82,8 @@ Use the navbar “Version” dropdown; docs and examples match the selected vers
 ### Quick start commands (copy/paste)
 - macOS: `sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply Aristoddle/beppe-system-bootstrap`
 - Linux (chezmoi installed): `chezmoi init --apply https://github.com/Aristoddle/beppe-system-bootstrap.git`
+
+### Uninstall / rollback (safety first)
+- Disable: `chezmoi apply --exclude=dotfiles` (or move files out of the way).
+- Remove managed files: `chezmoi destroy` (review with `chezmoi diff` first).
+- Restore backups: chezmoi keeps no automatic backups—copy files before destroy if you need them.
