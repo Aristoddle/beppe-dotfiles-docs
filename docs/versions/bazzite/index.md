@@ -23,6 +23,11 @@ Base docs apply from **main**. Differences to know:
 chezmoi init --apply https://github.com/Aristoddle/beppe-system-bootstrap.git
 ```
 
+## Deltas vs main
+- Steam Deck/Bazzite platform flags baked into templates (deck detection, UI paths).
+- Keeps Steam libraries and Deck power/GPU defaults; doesn’t touch Steam data.
+- Optional rclone/OneDrive mounts for ROMs/Comics if present; otherwise gracefully skipped.
+
 ## Tweaks vs main
 - Deck/Bazzite platform flags for chezmoi templates (steamdeck detection).
 - UI/power defaults kept; no touching Steam libraries.

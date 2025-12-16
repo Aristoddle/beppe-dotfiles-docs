@@ -21,6 +21,9 @@ hero:
     - theme: alt
       text: Testing & Quality
       link: /TESTING
+    - theme: alt
+      text: Repo / Issues
+      link: https://github.com/Aristoddle/beppe-system-bootstrap
   trust:
     - "Docs build: pass · Tests: ~640 (BATS) · Updated: 2025-12-16"
     - "Secrets: 1Password templating, no secrets in git · Repo: https://github.com/Aristoddle/beppe-system-bootstrap · Issues: /issues"

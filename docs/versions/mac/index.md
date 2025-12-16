@@ -25,6 +25,11 @@ Base docs apply from **main**. Differences to know:
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply Aristoddle/beppe-system-bootstrap
 ```
 
+## Deltas vs main
+- Native OneDrive path (no rclone needed).
+- TouchID/1Password flow for `op` CLI; Homebrew coexists with mise.
+- mac-specific shell paths/completions; keychain-friendly ssh-agent.
+
 ## Things that differ on mac
 - Package manager: Homebrew + mise coexist (don’t delete Homebrew).
 - Shell hooks: mac paths for completions, keychain/ssh-agent integration.
