@@ -2,9 +2,9 @@
 layout: home
 title: Beppe System Bootstrap
 hero:
-  name: Beppe's Dotfiles
+  name: Beppe's System Bootstrap
   text: One-line, agent-ready dotfiles for macOS, Linux, WSL, Bazzite.
-  tagline: Modern CLI stack, 1Password secrets, and Claude/Codex MCP wiring—ready in minutes.
+  tagline: Dotfiles + modern CLI stack + 1Password secrets + Claude/Codex MCP wiring—ready in minutes.
   actions:
     - theme: brand
       text: Quickstart
