@@ -56,6 +56,14 @@ bats tests/unit/smart_wrappers_test.bats
 bats -f "bat" tests/unit/*.bats
 ```
 
+## Command → Test Map (top surfaces)
+- `dotfiles doctor` → `tests/unit/dotfiles_doctor_test.bats`, `tests/integration/dotfiles_command_test.bats`
+- `dotfiles auth` → `tests/unit/dotfiles_auth_test.bats`, `tests/integration/auth_integration_test.bats`
+- `dotfiles update` → `tests/unit/dotfiles_update_test.bats`
+- Smart wrappers (`bat`, `ls`, `man`, `git-root`, `mkcd`) → `tests/unit/smart_wrappers_test.bats`, `tests/unit/git_utils_test.bats`, `tests/unit/system_utils_test.bats`
+- Shell startup → `tests/integration/shell_startup_test.bats`
+- mise transparent wrappers → `tests/unit/mise_transparent_wrappers_test.bats`, `tests/integration/mise_integration_test.bats`
+
 ## Writing a New Test (cheat sheet)
 1) Copy a template from `tests/templates/` (unit/integration/edge).  
 2) Source the helper in the header:

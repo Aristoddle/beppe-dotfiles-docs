@@ -131,6 +131,25 @@ Single source of truth for all configuration files, managed by git.
 - Per-machine customization
 - Prompts on first init
 
+## Architecture at a Glance
+
+```mermaid
+flowchart LR
+    A[chezmoi source\n(templates, data)] --> B[chezmoi render\nplatform + secrets]
+    B --> C[target files\n~/.config, ~/.zshrc, etc.]
+    C --> D[Runtime\nshell, tools, agents]
+    D --> E[Tests\nBATS: unit/integration]
+    E --> B
+    A --> E
+```
+
+### Secret Flow (templating)
+```mermaid
+flowchart LR
+    OP[1Password CLI / env] --> T[chezmoi template\n(op secrets injected)]
+    T --> R[Rendered files\n(no secrets in git)]
+```
+
 **File Naming Convention**:
 - `dot_filename` → `~/.filename`
 - `private_dot_config/zsh/` → `~/.config/zsh/`
