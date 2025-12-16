@@ -105,8 +105,9 @@ git push origin --delete linux
 
 ### Platform Detection Variables
 
-Available in templates via `{{ .platform.* }}`:
+Available in templates via `\\{\\{ .platform.* \\}\\}`:
 
+::: v-pre
 ```toml
 [data.platform]
 os = "linux"              # darwin, linux
@@ -116,6 +117,7 @@ is_mac = false
 is_linux = true
 linux_distro = "ubuntu"   # ubuntu, debian, arch, fedora, steamos
 ```
+:::
 
 ### OneDrive Detection
 
@@ -183,10 +185,13 @@ cat /etc/os-release
 ```
 
 If distro not detected, add to `.chezmoi.toml.tmpl`:
+
+::: v-pre
 ```go-template
 {{- else if contains "your-distro" (lower $osRelease) -}}
 {{-   $linuxDistro = "your-distro" -}}
 ```
+:::
 
 ### OneDrive Path Wrong
 

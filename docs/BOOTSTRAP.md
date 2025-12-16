@@ -217,14 +217,17 @@ See [SETUP.md](SETUP.md) for complete platform-specific instructions.
 ### Template Rendering
 
 **Variables** (`.chezmoi.toml.tmpl`):
+::: v-pre
 ```toml
 {{- $gitName := promptStringOnce . "git.name" "Git user name" -}}
 {{- $gitEmail := promptStringOnce . "git.email" "Git user email" -}}
 {{- $githubUsername := promptStringOnce . "github.username" "GitHub username" -}}
 {{- $deviceName := promptStringOnce . "device.name" "Device name" -}}
 ```
+:::
 
 **Usage in Templates**:
+::: v-pre
 ```toml
 # dot_gitconfig.tmpl
 [user]
@@ -234,6 +237,7 @@ See [SETUP.md](SETUP.md) for complete platform-specific instructions.
 [github]
     user = {{ .github.username }}
 ```
+:::
 
 ### run_once Scripts
 
@@ -249,6 +253,7 @@ See [SETUP.md](SETUP.md) for complete platform-specific instructions.
 ### Platform Detection
 
 **OS Detection** (in templates):
+::: v-pre
 ```bash
 # Example: Platform-specific configuration
 {{ if eq .chezmoi.os "darwin" -}}
@@ -257,6 +262,7 @@ See [SETUP.md](SETUP.md) for complete platform-specific instructions.
 # Linux-specific code
 {{ end -}}
 ```
+:::
 
 **Config Sourcing** (`.zshrc`):
 ```bash
@@ -337,7 +343,7 @@ chezmoi --config ~/.config/chezmoi/chezmoi.toml apply
 
 ### Template Variables Not Rendering
 
-**Symptom**: `{{ .git.name }}` appears literally in files
+**Symptom**: `\\{\\{ .git.name \\}\\}` appears literally in files
 
 **Cause**: File missing `.tmpl` extension
 
@@ -361,6 +367,7 @@ chezmoi apply
 **Adding Semi-Automated Tool Installation**:
 
 Create `run_once_install_tools.sh.tmpl`:
+::: v-pre
 ```bash
 #!/bin/bash
 {{ if eq .chezmoi.os "darwin" -}}
@@ -376,6 +383,7 @@ brew tap homebrew/cask-fonts
 brew install --cask font-meslo-lg-nerd-font
 {{ end -}}
 ```
+:::
 
 **Note**: This would make Oh-My-Zsh/p10k semi-automated, but requires user consent to run interactive installers.
 
@@ -396,12 +404,15 @@ mise use --global python@latest
 ### Multi-Machine Configs
 
 **Different configs per machine**:
+::: v-pre
 ```bash
 # .chezmoi.toml.tmpl
 {{- $isWork := promptBool "Work machine" -}}
 ```
+:::
 
 **Conditional deployment**:
+::: v-pre
 ```bash
 # dot_gitconfig.tmpl
 {{ if .isWork -}}
@@ -412,6 +423,7 @@ mise use --global python@latest
     email = "personal@example.com"
 {{ end -}}
 ```
+:::
 
 ### Testing Bootstrap Safely
 

@@ -275,7 +275,7 @@ run_onchange_after_install-fonts.sh.tmpl  # New (uses run_onchange_)
 
 1. **Color helpers**: Same `print_info`, `print_success`, etc.
 2. **Platform detection**: Compatible with `.platform.is_mac`, `.platform.is_linux`
-3. **Template variables**: Uses `{{ .chezmoi.* }}` variables
+3. **Template variables**: Uses `\\{\\{ .chezmoi.* \\}\\}` variables
 4. **Error handling**: Similar dependency checking pattern
 
 ### Integration with `scripts/lib.sh`

@@ -8,6 +8,7 @@ export default defineConfig({
   description: 'Zero‑friction dotfiles with agents, secrets, and a modern CLI stack.',
   lang: 'en-US',
   base,
+  ignoreDeadLinks: true,
   head: [
     ['meta', { name: 'robots', content: 'noindex,nofollow' }],
     ['meta', { name: 'theme-color', content: '#111827' }]

@@ -127,7 +127,7 @@ Single source of truth for all configuration files, managed by git.
 - Portable across machines
 
 **Template Support**:
-- `{{.git.name}}`, `{{.github.username}}`, etc.
+- `\\{\\{.git.name\\}\\}`, `\\{\\{.github.username\\}\\}`, etc.
 - Per-machine customization
 - Prompts on first init
 
