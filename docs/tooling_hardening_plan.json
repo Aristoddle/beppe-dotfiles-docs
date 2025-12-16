@@ -1,0 +1,206 @@
+{
+  "plan_id": "tooling-hardening-2025-11-21",
+  "generated_at": "2025-11-21T00:00:00Z",
+  "schema_version": "1.0",
+  "meta": {
+    "owner": "dotfiles/bootstrap",
+    "context": "Harden tool installation + MCP workflows so agents/humans cannot bypass structure.",
+    "risk_profile": "LLM + human operators default to shortcuts; need structural enforcement over documentation.",
+    "operating_assumptions": [
+      "Primary shell must be zsh for wrappers to work",
+      "Tool installs must be reproducible via chezmoi + mise",
+      "Agents [Claude/Codex/etc.] may ignore docs unless code-enforced"
+    ],
+    "audit_backlinks": [
+      "README.md",
+      "docs/HOMEBREW_MISE_COEXISTENCE.md",
+      "private_dot_config/zsh/functions/mise-transparent-wrappers.zsh",
+      "private_dot_codex/config.toml.tmpl",
+      "dot_claude/README.md"
+    ]
+  },
+  "tasks": [
+    {
+      "id": "manifest-schema",
+      "title": "Define declarative tool manifest",
+      "inspiration": "Need single source of truth for tool installers beyond docs.",
+      "rationale": "Keeps versions + installers pinned; prevents drift when agents improvise",
+      "design_refs": [
+        "docs/HOMEBREW_MISE_COEXISTENCE.md",
+        "README.md"
+      ],
+      "actions": [
+        "Create data/tool_versions.toml template with {installer, version, url/hash, verify_cmd, cleanup_cmd}",
+        "Render to ~/.config/dotfiles/tools.toml via chezmoi without prompting",
+        "Document schema inline so compressed context still carries nuance"
+      ],
+      "verification": "chezmoi data template renders + git diff only shows manifest file when versions change",
+      "dependencies": [],
+      "notes": "Ensure updates avoid .chezmoi.toml prompt churn"
+    },
+    {
+      "id": "modular-installers",
+      "title": "Create modular installers + orchestrator",
+      "inspiration": "Single run_once scripts don\u2019t scale; need per-tool modules",
+      "rationale": "Limits blast radius and allows retries/rollback per tool",
+      "design_refs": [
+        "scripts/",
+        "private_dot_config/zsh/functions/dotfiles-helper.zsh"
+      ],
+      "actions": [
+        "Add scripts/tool-install/<tool>.sh.tmpl with transactional install/verify/cleanup",
+        "Implement scripts/tools/run.sh that reads manifest and dispatches",
+        "Expose dotfiles tool install|status|sync commands calling orchestrator"
+      ],
+      "verification": "Running dotfiles tool install <tool> installs to temp, verifies hash, writes state",
+      "dependencies": [
+        "manifest-schema"
+      ],
+      "notes": "Use atomic move + hash verification to prevent partial installs"
+    },
+    {
+      "id": "state-tracking",
+      "title": "Persist install state + enforce via doctor",
+      "inspiration": "Need machine-readable assurance tools match manifest",
+      "rationale": "Prevents silent failures + powers dotfiles doctor remediation",
+      "design_refs": [
+        "scripts/tools/run.sh",
+        "private_dot_config/zsh/functions/dotfiles-helper.zsh"
+      ],
+      "actions": [
+        "Write ~/.config/dotfiles/tool-state/<tool>.json after each install",
+        "Extend dotfiles doctor to compare manifest vs state vs actual binaries",
+        "Emit actionable fixes (dotfiles tool install <tool>) when drift detected"
+      ],
+      "verification": "dotfiles doctor fails if a tool is missing or wrong version",
+      "dependencies": [
+        "manifest-schema",
+        "modular-installers"
+      ],
+      "notes": "Include last installer exit code for debugging"
+    },
+    {
+      "id": "shell-enforcement",
+      "title": "Enforce zsh + helper-only installs",
+      "inspiration": "Bash sessions bypass wrappers; agents default to bash",
+      "rationale": "Structural guardrails beat documentation",
+      "design_refs": [
+        "private_dot_codex/config.toml.tmpl",
+        "dot_claude/README.md"
+      ],
+      "actions": [
+        "Set shell = zsh in Codex/Claude configs and add .zshenv guard",
+        "Implement global-npm/global-pipx helpers that call orchestrator",
+        "Alias npm/pipx to wrappers that refuse non-orchestrator installs unless override flag set"
+      ],
+      "verification": "Running npm install -g outside helper prints structured error and logs violation",
+      "dependencies": [
+        "manifest-schema"
+      ],
+      "notes": "Provide escape hatch env var for emergency"
+    },
+    {
+      "id": "command-auditing",
+      "title": "Preexec auditing for install commands",
+      "inspiration": "Agents/humans will try shortcuts",
+      "rationale": "Immediate feedback prevents silent drift",
+      "design_refs": [
+        "private_dot_config/zsh/config/30-completions.zsh"
+      ],
+      "actions": [
+        "Add zsh preexec hook logging install-like commands",
+        "Block or warn when pattern doesn\u2019t match dotfiles tool helper",
+        "Write violations to ~/logs/dotfiles/install-violations.log for review"
+      ],
+      "verification": "Executing raw npm install -g appends log entry and issues warning",
+      "dependencies": [
+        "shell-enforcement"
+      ],
+      "notes": "Keep log format machine-readable for future automation"
+    },
+    {
+      "id": "claude-installer",
+      "title": "Migrate Claude CLI to native installer",
+      "inspiration": "Anthropic recommends curl binary; npm vanish issue",
+      "rationale": "Removes Node dependency + ensures reproducible install",
+      "design_refs": [
+        "docs/SETUP.md",
+        "dot_claude/README.md"
+      ],
+      "actions": [
+        "Add manifest entry pointing to curl installer with version pin",
+        "Write installer module with hash check + cleanup of old npm CLI",
+        "Update docs/pre-prompts to state `dotfiles tool install claude` is required"
+      ],
+      "verification": "dotfiles tool install claude downloads pinned script, installs, writes state",
+      "dependencies": [
+        "manifest-schema",
+        "modular-installers"
+      ],
+      "notes": "Hook into orchestrator for future updates"
+    },
+    {
+      "id": "mise-integration",
+      "title": "Align manifest with mise",
+      "inspiration": "Scoped npm packages not persisted; need mapping",
+      "rationale": "Ensures `mise ls --global` matches manifest",
+      "design_refs": [
+        "docs/HOMEBREW_MISE_COEXISTENCE.md",
+        "private_dot_config/zsh/functions/mise-transparent-wrappers.zsh"
+      ],
+      "actions": [
+        "Extend orchestrator to call mise use --global for npm tools",
+        "Maintain mapping file for scoped packages or contribute patch upstream",
+        "dotfiles doctor compares mise output with manifest"
+      ],
+      "verification": "mise ls --global includes every npm tool defined",
+      "dependencies": [
+        "manifest-schema",
+        "modular-installers"
+      ],
+      "notes": "If mise lacks feature, document workaround in manifest"
+    },
+    {
+      "id": "sequentialthinking-fix",
+      "title": "Stabilize SequentialThinking MCP usage",
+      "inspiration": "Invalid thoughtNumber crash",
+      "rationale": "Agents need deterministic helper to call MCP tools",
+      "design_refs": [
+        "dot_claude/agents/sequential-thinking-auditor.md",
+        "dot_local/bin/executable_mcp"
+      ],
+      "actions": [
+        "Add helper (dotfiles mcp call) that formats payloads correctly",
+        "Update pre-prompts to instruct agents to use helper",
+        "Add doctor check invoking sequential-thinking tools/list"
+      ],
+      "verification": "dotfiles mcp call sequential-thinking:tools/list succeeds; doctor fails if not",
+      "dependencies": [
+        "modular-installers"
+      ],
+      "notes": "Document JSON schema inline so compressed context survives"
+    },
+    {
+      "id": "testing",
+      "title": "Automated validation",
+      "inspiration": "Need proof structural guards work",
+      "rationale": "Prevents regressions before agents touch system",
+      "design_refs": [
+        "tests/",
+        "scripts/smoke-core-tools.sh"
+      ],
+      "actions": [
+        "Add BATS tests for dotfiles tool install + enforcement hooks",
+        "Wire tests into scripts/smoke-core-tools.sh or CI equivalent",
+        "Ensure dotfiles doctor runs these tests when invoked"
+      ],
+      "verification": "bats tests/tools/*.bats pass locally + via doctor",
+      "dependencies": [
+        "modular-installers",
+        "shell-enforcement",
+        "command-auditing"
+      ],
+      "notes": "Tests should simulate agent misbehavior scenarios"
+    }
+  ]
+}

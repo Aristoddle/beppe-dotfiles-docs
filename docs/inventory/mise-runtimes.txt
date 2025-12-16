@@ -1,0 +1,17 @@
+bun       1.2.21            ~/.config/mise/config.toml  latest
+deno      2.5.0             ~/.config/mise/config.toml  latest
+dotnet    9.0.305           ~/.config/mise/config.toml  latest
+elixir    1.18.4-otp-28     ~/.config/mise/config.toml  latest
+erlang    28.0.4            ~/.config/mise/config.toml  latest
+go        1.25.1            ~/.config/mise/config.toml  latest
+java      25.0.0            ~/.config/mise/config.toml  latest
+jq        1.8.1             ~/.config/mise/config.toml  latest
+kotlin    2.2.20            ~/.config/mise/config.toml  latest
+lua       5.4.8             ~/.config/mise/config.toml  latest
+node      22.19.0           ~/.config/mise/config.toml  lts
+postgres  17.6              ~/.config/mise/config.toml  latest
+ruby      3.4.5             ~/.config/mise/config.toml  latest
+rust      1.89.0 (symlink)  ~/.config/mise/config.toml  latest
+scala     3.7.3             ~/.config/mise/config.toml  latest
+sqlite    3.50.4            ~/.config/mise/config.toml  latest
+yq        4.47.2            ~/.config/mise/config.toml  latest
