@@ -2,35 +2,25 @@
 layout: home
 title: Beppe System Bootstrap
 hero:
-  name: Beppe's System Bootstrap
-  text: One-line, agent-ready dotfiles for macOS, Linux, WSL, Bazzite.
-  tagline: Dotfiles + modern CLI stack + 1Password secrets + Claude/Codex MCP wiring—ready in minutes.
+  name: A developer shell that's actually fast.
+  text: 200ms startup · 30+ CLI wrappers · macOS + Linux
+  tagline: Modern CLI tools, intelligent defaults, cross-platform by design. One command to try it.
   actions:
     - theme: brand
-      text: Quickstart
+      text: Get Started
       link: /QUICKSTART
     - theme: alt
-      text: Setup Guide
-      link: /SETUP
+      text: Browse Features
+      link: /ARCHITECTURE
     - theme: alt
-      text: Agents & Skills
-      link: /CLAUDE_CODE_AGENTS_SKILLS
-    - theme: alt
-      text: Pick Version (mac/bazzite/main)
-      link: /versions/
-    - theme: alt
-      text: Testing & Quality
-      link: /TESTING
-    - theme: alt
-      text: Repo / Issues
+      text: View on GitHub
       link: https://github.com/Aristoddle/beppe-system-bootstrap
   trust:
-    - "Docs build: pass · Tests: ~640 (BATS) · Updated: 2025-12-16"
-    - "Secrets: 1Password templating, no secrets in git · Repo: https://github.com/Aristoddle/beppe-system-bootstrap · Issues: /issues"
+    - "~640 BATS tests · No secrets in git · CI-enforced docs"
   badges:
-    - "Docs build: ✅"
     - "Tests: ~640"
-    - "Updated: 2025-12-16"
+    - "Startup: <200ms"
+    - "Updated: 2025-12-21"
 features:
   - title: Curated CLI Stack
     details: zsh + OMZ + Powerlevel10k, fzf, eza, zoxide, direnv, lazygit, mise/pyenv—pre-tuned.
@@ -46,51 +36,57 @@ features:
     details: Noindex meta, minimal dependencies, guarded secrets flow, and drift checks via chezmoi diff.
 ---
 
-## What’s Inside
+## Quick Install
 
-- **Shell UX:** tuned zsh, autosuggestions, syntax highlighting, host-scoped completion cache.  
-- **Runtimes:** mise for multi-language; pyenv for Python venvs; optional source-built core toolchain.  
-- **Automation:** health checks, agent libraries, and scripts to keep installs reproducible.  
-- **Docs:** Quickstart, Setup, ChezMoi guide, architecture, troubleshooting, platform notes.  
-- **Quality:** ~640 tests (BATS), strict docs build, no secrets in git (1Password templating).
+::: code-group
 
-## Quick Links
-
-- [Quickstart](/QUICKSTART) · [Setup](/SETUP) · [Troubleshooting](/TROUBLESHOOTING)  
-- [ChezMoi Guide](/CHEZMOI_GUIDE) · [Agents & Skills](/CLAUDE_CODE_AGENTS_SKILLS)  
-- [Platform Differences](/PLATFORM_DIFFERENCES) · [Using Bazzite](/USING_BAZZITE)  
-- [VPN / Torrents](/VPN_TORRENT) · [Recovery Quick Reference](/RECOVERY_QUICK_REFERENCE)
-- [Testing & Quality](/TESTING)
-
-## Deploy
-
-```bash
+```bash [macOS]
+# Install chezmoi and apply dotfiles in one command
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply Aristoddle/beppe-system-bootstrap
 ```
 
-Already have chezmoi?
+```bash [Linux/WSL]
+# Install chezmoi and apply dotfiles
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply Aristoddle/beppe-system-bootstrap
 
-```bash
+# Or if chezmoi is already installed:
 chezmoi init --apply https://github.com/Aristoddle/beppe-system-bootstrap.git
 ```
 
-> Need help? Run `dotfiles doctor` after apply, or see [TROUBLESHOOTING](/TROUBLESHOOTING).
+```bash [Bazzite/Steam Deck]
+# Same command works on Bazzite
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply Aristoddle/beppe-system-bootstrap
 
-### Version picker
-- **bazzite**: Steam Deck / HTPC (Bazzite defaults)
-- **main**: Generic macOS + Linux
-Use the navbar “Version” dropdown; docs and examples match the selected version.
+# Use the bazzite branch for gaming-specific defaults:
+chezmoi init --apply --branch bazzite Aristoddle/beppe-system-bootstrap
+```
 
-### Platform & safety at a glance
-- Platforms: macOS • Linux/WSL • Bazzite (Steam Deck)
-- Secrets: 1Password templating; nothing sensitive in git; site set to noindex.
-- Tests: ~640 BATS tests; docs build is CI-enforced.
+:::
 
-### Quick start commands (copy/paste)
-- macOS: `sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply Aristoddle/beppe-system-bootstrap`
-- Linux (chezmoi installed): `chezmoi init --apply https://github.com/Aristoddle/beppe-system-bootstrap.git`
+After install, run `dotfiles doctor` to verify everything works.
 
-### Uninstall / rollback (safety first)
-- Disable: `chezmoi apply --exclude=dotfiles` (or move files out of the way).
-- Remove managed files: `chezmoi destroy` (review with `chezmoi diff` first).
-- Restore backups: chezmoi keeps no automatic backups—copy files before destroy if you need them.
+## What's Inside
+
+| Category | What You Get |
+|----------|--------------|
+| **Shell** | Tuned zsh + OMZ + Powerlevel10k, autosuggestions, syntax highlighting |
+| **CLI Tools** | bat, eza, fd, rg, fzf, zoxide, lazygit, delta, dust, procs |
+| **Runtimes** | mise (multi-language) + pyenv (Python) with intelligent defaults |
+| **AI Agents** | Claude Code + Codex CLI with MCP servers preconfigured |
+| **Secrets** | 1Password templating - no secrets in git, ever |
+| **Quality** | ~640 BATS tests, health checks, drift detection |
+
+## Quick Links
+
+**Getting Started**: [Quickstart](/QUICKSTART) · [Setup](/SETUP) · [Troubleshooting](/TROUBLESHOOTING)
+
+**Deep Dive**: [Architecture](/ARCHITECTURE) · [Agents & Skills](/CLAUDE_CODE_AGENTS_SKILLS) · [Platform Differences](/PLATFORM_DIFFERENCES)
+
+**Platform Guides**: [Using Bazzite](/USING_BAZZITE) · [Recovery Quick Reference](/RECOVERY_QUICK_REFERENCE)
+
+## Safety
+
+- **Secrets**: 1Password templating; nothing sensitive in git
+- **Rollback**: `chezmoi diff` before apply, `chezmoi destroy` to uninstall
+- **Tests**: ~640 BATS tests; docs build is CI-enforced
+- **Privacy**: Site is noindex; this is for friends, not SEO
