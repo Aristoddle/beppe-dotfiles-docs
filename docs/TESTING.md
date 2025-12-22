@@ -4,7 +4,7 @@ _Last reviewed: 2025‑12‑16 • Stack: BATS (bash) testing zsh functions_
 
 ## Snapshot
 - **Files:** 57 (23 unit, 13 integration, 11 root helpers/examples/templates, 10 misc)
-- **Approx tests:** ~640 (majority unit; integration covers shell startup, chezmoi workflows, wrappers)
+- **Approx tests:** 700+ (majority unit; integration covers shell startup, chezmoi workflows, wrappers)
 - **Runtime:** `make test` ~60–90s on laptop; `run-parallel.sh` trims to ~30s if GNU parallel present.
 
 ## Philosophy

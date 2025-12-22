@@ -32,7 +32,7 @@ chezmoi init --apply https://github.com/Aristoddle/beppe-system-bootstrap.git
 - **Modern CLI:** eza, fd, ripgrep, fzf, zoxide, direnv, lazygit, bat, dust, procs, delta.
 - **Runtimes:** mise for multi-language, pyenv for Python venvs; optional core-toolchain overlay.
 - **Secrets:** 1Password CLI integration; templated secrets injection (no secrets in git).
-- **Agents:** ~25 agents / ~24 skills (Claude/Codex); MCP servers pre-wired; op/gh integration.
+- **Agents:** 34 agents / 26 skills (Claude/Codex); MCP servers pre-wired; op/gh integration.
 - **Platforms:** macOS, Ubuntu/Debian, Bazzite/Steam Deck, WSL — with platform-specific tweaks.
 
 ---

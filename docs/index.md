@@ -16,11 +16,11 @@ hero:
       text: View on GitHub
       link: https://github.com/Aristoddle/beppe-system-bootstrap
   trust:
-    - "~640 BATS tests · No secrets in git · CI-enforced docs"
+    - "700+ BATS tests · No secrets in git · CI-enforced docs"
   badges:
-    - "Tests: ~640"
+    - "Tests: 700+"
     - "Startup: <200ms"
-    - "Updated: 2025-12-21"
+    - "Updated: 2025-12-22"
 features:
   - title: Curated CLI Stack
     details: zsh + OMZ + Powerlevel10k, fzf, eza, zoxide, direnv, lazygit, mise/pyenv—pre-tuned.
@@ -74,7 +74,7 @@ After install, run `dotfiles doctor` to verify everything works.
 | **Runtimes** | mise (multi-language) + pyenv (Python) with intelligent defaults |
 | **AI Agents** | Claude Code + Codex CLI with MCP servers preconfigured |
 | **Secrets** | 1Password templating - no secrets in git, ever |
-| **Quality** | ~640 BATS tests, health checks, drift detection |
+| **Quality** | 700+ BATS tests, health checks, drift detection |
 
 ## Quick Links
 
@@ -88,5 +88,5 @@ After install, run `dotfiles doctor` to verify everything works.
 
 - **Secrets**: 1Password templating; nothing sensitive in git
 - **Rollback**: `chezmoi diff` before apply, `chezmoi destroy` to uninstall
-- **Tests**: ~640 BATS tests; docs build is CI-enforced
+- **Tests**: 700+ BATS tests; docs build is CI-enforced
 - **Privacy**: Site is noindex; this is for friends, not SEO

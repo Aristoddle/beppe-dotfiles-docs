@@ -41,6 +41,8 @@ dotfiles help          # Show all dotfiles commands
 dotfiles list          # List ALL available functions and aliases
 dotfiles list python   # List Python-specific commands
 dotfiles list git      # List Git utilities
+dotfiles explain pyinit    # Show where pyinit is defined + docs
+dotfiles explain ask       # Show where ask is defined + docs
 ```
 
 ### Edit Configuration
@@ -356,6 +358,7 @@ dotfiles docs quickstart      # This guide
 dotfiles docs architecture    # System architecture
 dotfiles docs ssh             # SSH/auth setup
 dotfiles list [category]      # List commands by category
+dotfiles explain <cmd>        # Look up where a command is defined + docs
 dotfiles status               # System health check
 ```
 
@@ -404,6 +407,7 @@ dotfiles status               # System health check
 ║ DISCOVERY                                                    ║
 ║   dotfiles help           Show all commands                  ║
 ║   dotfiles list           List functions/aliases             ║
+║   dotfiles explain <cmd>  Look up where a command is defined ║
 ║   dotfiles docs <topic>   View documentation                 ║
 ║                                                              ║
 ║ EDITING                                                      ║
