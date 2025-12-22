@@ -3,7 +3,7 @@ layout: home
 title: Beppe System Bootstrap
 hero:
   name: AI-native dotfiles for the agentic era.
-  text: 34 agents · 26 skills · MCP servers preconfigured
+  text: 34 agents · 27 skills · MCP servers preconfigured
   tagline: Your shell speaks to Claude and Codex out of the box. Cross-platform, tested, fast.
   actions:
     - theme: brand
@@ -16,11 +16,11 @@ hero:
       text: View on GitHub
       link: https://github.com/Aristoddle/beppe-system-bootstrap
   trust:
-    - "700+ BATS tests · 1Password secrets · Works on macOS, Linux, Steam Deck"
+    - "763 BATS tests · 1Password secrets · Works on macOS, Linux, Steam Deck"
   badges:
     - "Agents: 34"
-    - "Skills: 26"
-    - "Tests: 700+"
+    - "Skills: 27"
+    - "Tests: 763"
     - "Startup: <200ms"
 features:
   - title: "🤖 Agent-Ready Shell"
@@ -33,8 +33,8 @@ features:
     details: 1Password CLI templating; no secrets in git. gh/op plugin auto-wire and op-reup helper.
   - title: "🌍 Cross-Platform"
     details: chezmoi templates for macOS, Linux, WSL, Steam Deck/Bazzite; platform-specific tweaks baked in.
-  - title: "🧪 700+ Tests"
-    details: BATS test suite with 700+ tests, CI-enforced docs, drift detection via chezmoi diff.
+  - title: "🧪 763 Tests"
+    details: BATS test suite with 763 tests (353 unit, 410 integration), CI-enforced docs, drift detection via chezmoi diff.
 ---
 
 ## Quick Install
