@@ -2,9 +2,9 @@
 layout: home
 title: Beppe System Bootstrap
 hero:
-  name: A developer shell that's actually fast.
-  text: 200ms startup · 30+ CLI wrappers · macOS + Linux
-  tagline: Modern CLI tools, intelligent defaults, cross-platform by design. One command to try it.
+  name: AI-native dotfiles for the agentic era.
+  text: 34 agents · 26 skills · MCP servers preconfigured
+  tagline: Your shell speaks to Claude and Codex out of the box. Cross-platform, tested, fast.
   actions:
     - theme: brand
       text: Get Started
@@ -16,24 +16,25 @@ hero:
       text: View on GitHub
       link: https://github.com/Aristoddle/beppe-system-bootstrap
   trust:
-    - "700+ BATS tests · No secrets in git · CI-enforced docs"
+    - "700+ BATS tests · 1Password secrets · Works on macOS, Linux, Steam Deck"
   badges:
+    - "Agents: 34"
+    - "Skills: 26"
     - "Tests: 700+"
     - "Startup: <200ms"
-    - "Updated: 2025-12-22"
 features:
-  - title: Curated CLI Stack
-    details: zsh + OMZ + Powerlevel10k, fzf, eza, zoxide, direnv, lazygit, mise/pyenv—pre-tuned.
-  - title: Secrets Built-In
+  - title: "🤖 Agent-Ready Shell"
+    details: Claude Code + Codex CLI with MCP servers (filesystem, git, memory, sequential-thinking) preconfigured. Pipe anything to AI.
+  - title: "⚡ One-Command Projects"
+    details: "pyinit, nodeinit, goinit, rustinit — create fully configured projects with venvs/toolchains in seconds."
+  - title: "🔧 Self-Healing Config"
+    details: "dotfiles doctor checks auth, tools, and shell health. dotfiles auth manages 1Password, gh, Claude, Copilot."
+  - title: "🔐 Secrets Built-In"
     details: 1Password CLI templating; no secrets in git. gh/op plugin auto-wire and op-reup helper.
-  - title: Agent-Ready
-    details: Claude/Codex MCP servers (filesystem, git, memory, sequential-thinking) preconfigured.
-  - title: Portable
+  - title: "🌍 Cross-Platform"
     details: chezmoi templates for macOS, Linux, WSL, Steam Deck/Bazzite; platform-specific tweaks baked in.
-  - title: Fast Recovery
-    details: Recovery quick-reference, troubleshooting, and health commands (dotfiles doctor, dotfiles auth).
-  - title: Safe by Default
-    details: Noindex meta, minimal dependencies, guarded secrets flow, and drift checks via chezmoi diff.
+  - title: "🧪 700+ Tests"
+    details: BATS test suite with 700+ tests, CI-enforced docs, drift detection via chezmoi diff.
 ---
 
 ## Quick Install
@@ -65,14 +66,31 @@ chezmoi init --apply --branch bazzite Aristoddle/beppe-system-bootstrap
 
 After install, run `dotfiles doctor` to verify everything works.
 
+## Pipe Anything to AI
+
+```bash
+# Quick queries with full tool access
+ask "explain this code"
+cat file.py | ask "review this"
+
+# Smart routing to best model
+ai "summarize these logs"
+git diff | gpt "write commit message"
+
+# Direct model shortcuts
+opus "complex task"
+sonnet "general task"
+haiku "quick question"
+```
+
 ## What's Inside
 
 | Category | What You Get |
 |----------|--------------|
+| **AI Agents** | 34 agents, 26 skills, Claude/Codex CLIs, MCP servers preconfigured |
 | **Shell** | Tuned zsh + OMZ + Powerlevel10k, autosuggestions, syntax highlighting |
 | **CLI Tools** | bat, eza, fd, rg, fzf, zoxide, lazygit, delta, dust, procs |
 | **Runtimes** | mise (multi-language) + pyenv (Python) with intelligent defaults |
-| **AI Agents** | Claude Code + Codex CLI with MCP servers preconfigured |
 | **Secrets** | 1Password templating - no secrets in git, ever |
 | **Quality** | 700+ BATS tests, health checks, drift detection |
 
