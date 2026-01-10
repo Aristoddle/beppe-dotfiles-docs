@@ -1,6 +1,6 @@
 # Beppe System Bootstrap — AI-Native Dotfiles
 
-> Dotfiles for the agentic era. 34 agents, 26 skills, MCP servers preconfigured. Your shell speaks to Claude and Codex out of the box.
+> Dotfiles for the agentic era. 35 agents, 30 skills, MCP servers preconfigured. Your shell speaks to Claude and Codex out of the box.
 
 ---
 
@@ -44,9 +44,9 @@ ai "summarize these logs"
 - **sequential-thinking** — Deep reasoning mode
 
 ### Agent Infrastructure
-- **34 agents** — Task executors with YAML frontmatter
-- **26 skills** — Always-active context guidance
-- **700+ BATS tests** — Comprehensive coverage
+- **35 agents** — Task executors with YAML frontmatter
+- **30 skills** — Always-active context guidance
+- **709 BATS tests** — Comprehensive coverage (433 unit, 276 integration)
 
 ---
 

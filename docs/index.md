@@ -3,7 +3,7 @@ layout: home
 title: Beppe System Bootstrap
 hero:
   name: AI-native dotfiles for the agentic era.
-  text: 34 agents · 27 skills · MCP servers preconfigured
+  text: 35 agents · 30 skills · MCP servers preconfigured
   tagline: Your shell speaks to Claude and Codex out of the box. Cross-platform, tested, fast.
   actions:
     - theme: brand
@@ -16,11 +16,11 @@ hero:
       text: View on GitHub
       link: https://github.com/Aristoddle/beppe-system-bootstrap
   trust:
-    - "763 BATS tests · 1Password secrets · Works on macOS, Linux, Steam Deck"
+    - "709 BATS tests · 1Password secrets · Works on macOS, Linux, Steam Deck"
   badges:
-    - "Agents: 34"
-    - "Skills: 27"
-    - "Tests: 763"
+    - "Agents: 35"
+    - "Skills: 30"
+    - "Tests: 709"
     - "Startup: <200ms"
 features:
   - title: "🤖 Agent-Ready Shell"
@@ -33,8 +33,8 @@ features:
     details: 1Password CLI templating; no secrets in git. gh/op plugin auto-wire and op-reup helper.
   - title: "🌍 Cross-Platform"
     details: chezmoi templates for macOS, Linux, WSL, Steam Deck/Bazzite; platform-specific tweaks baked in.
-  - title: "🧪 763 Tests"
-    details: BATS test suite with 763 tests (353 unit, 410 integration), CI-enforced docs, drift detection via chezmoi diff.
+  - title: "🧪 709 Tests"
+    details: BATS test suite with 709 tests (433 unit, 276 integration), CI-enforced docs, drift detection via chezmoi diff.
 ---
 
 ## Quick Install
@@ -58,8 +58,8 @@ chezmoi init --apply https://github.com/Aristoddle/beppe-system-bootstrap.git
 # Same command works on Bazzite
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply Aristoddle/beppe-system-bootstrap
 
-# Use the bazzite branch for gaming-specific defaults:
-chezmoi init --apply --branch bazzite Aristoddle/beppe-system-bootstrap
+# Platform-specific files are automatically excluded via .chezmoiignore.tmpl
+# No need to use a separate branch - single main branch works everywhere
 ```
 
 :::
@@ -87,7 +87,7 @@ haiku "quick question"
 
 | Category | What You Get |
 |----------|--------------|
-| **AI Agents** | 34 agents, 26 skills, Claude/Codex CLIs, MCP servers preconfigured |
+| **AI Agents** | 35 agents, 30 skills, Claude/Codex CLIs, MCP servers preconfigured |
 | **Shell** | Tuned zsh + OMZ + Powerlevel10k, autosuggestions, syntax highlighting |
 | **CLI Tools** | bat, eza, fd, rg, fzf, zoxide, lazygit, delta, dust, procs |
 | **Runtimes** | mise (multi-language) + pyenv (Python) with intelligent defaults |

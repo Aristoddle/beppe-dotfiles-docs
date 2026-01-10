@@ -1,16 +1,50 @@
 ---
-title: Pick Your Version
+title: Platform Support
 ---
 
-# Version Chooser
+# Platform Support
 
-Use the variant that matches your host. When in doubt: **bazzite** for Steam Deck/Bazzite; **main** for everything else; **mac** if you want mac-specific notes.
+All platforms use a **single `main` branch**. Platform-specific files are excluded at deploy time via `.chezmoiignore.tmpl`.
 
-- **bazzite** — Steam Deck / HTPC running Bazzite. Tweaks for Deck UI, Proton/SteamOS paths, GPU/power defaults.  
-  [Open bazzite docs](/versions/bazzite/)
-- **mac** — macOS-specific notes (Homebrew paths, mac OneDrive detection, TouchID/1Password). Base is the same as main with mac callouts.  
-  [Open mac docs](/versions/mac/)
-- **main** — Generic macOS + Linux (Ubuntu/Fedora/Arch/WSL) without Bazzite-specific defaults.  
-  _(Public page pending; use main branch in the repo for now.)_
+## Supported Platforms
 
-You can switch anytime via the navbar “Version” dropdown.
+| Platform | Status | Notes |
+|----------|--------|-------|
+| **macOS** | Full support | Homebrew, Alfred workflows, TouchID/1Password |
+| **Linux** (Ubuntu/Fedora/Arch) | Full support | apt/dnf packages, systemd integration |
+| **WSL** | Full support | Windows 1Password integration, symlinked paths |
+| **Bazzite / Steam Deck** | Full support | Immutable OS tweaks, Deck UI, Proton paths |
+
+## How Platform Detection Works
+
+chezmoi uses `.chezmoiignore.tmpl` to exclude files based on the host system:
+
+```
+# Example exclusions (simplified)
+{{- if ne .chezmoi.os "darwin" }}
+# Linux: Exclude macOS-specific files
+private_dot_config/alfred/
+{{- end }}
+
+{{- if ne .chezmoi.os "linux" }}
+# macOS: Exclude Linux-specific files
+private_dot_config/systemd/
+private_dot_config/sunshine/
+{{- end }}
+```
+
+## Installation (All Platforms)
+
+The same command works everywhere:
+
+```bash
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply Aristoddle/beppe-system-bootstrap
+```
+
+After install, run `dotfiles doctor` to verify platform-specific tools are available.
+
+## Platform-Specific Docs
+
+- [Using Bazzite](/USING_BAZZITE) - Steam Deck / HTPC running Bazzite
+- [Platform Differences](/PLATFORM_DIFFERENCES) - Tool availability across platforms
+- [Recovery Quick Reference](/RECOVERY_QUICK_REFERENCE) - Platform-specific recovery steps

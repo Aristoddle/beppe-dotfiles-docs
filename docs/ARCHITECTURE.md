@@ -10,8 +10,8 @@ Beppe-system-bootstrap is a **programmable, AI-augmented development environment
 ┌─────────────────────────────────────────────────────────────┐
 │  Layer 4: Agent Layer (Autonomous Maintenance)              │
 │  ~/.claude/agents/ + ~/.claude/skills/                      │
-│  - 34 specialized agents                                    │
-│  - 26 skills (zsh-expert, graceful-degradation, etc.)       │
+│  - 35 specialized agents                                    │
+│  - 30 skills (zsh-expert, graceful-degradation, etc.)       │
 │  - 3 multi-agent workflows                                  │
 └─────────────────────────────────────────────────────────────┘
                             ▼
@@ -319,17 +319,17 @@ Autonomous maintenance, validation, and optimization through AI agents.
 
 ### Components
 
-**Skills** (26 total):
+**Skills** (30 total):
 ```
 ~/.claude/skills/
 ├── zsh-expert.md                  # Zsh syntax guidance
 ├── graceful-degradation.md        # Tool availability checks
 ├── pipe-safety-checker.md         # Pipe detection patterns
 ├── chezmoi-expert.md              # chezmoi workflow enforcement
-└── [22 additional skills]         # See CLAUDE_CODE_AGENTS_SKILLS.md
+└── [26 additional skills]         # See CLAUDE_CODE_AGENTS_SKILLS.md
 ```
 
-**Agents** (34 total):
+**Agents** (35 total):
 ```
 ~/.claude/agents/
 ├── dotfiles-maintainer.md         # System health monitoring
@@ -337,7 +337,7 @@ Autonomous maintenance, validation, and optimization through AI agents.
 ├── zsh-performance-auditor.md     # Startup profiling
 ├── test-validator.md              # Function testing
 ├── doc-synchronizer.md            # Doc/code validation
-└── [29 additional agents]         # See CLAUDE_CODE_AGENTS_SKILLS.md
+└── [30 additional agents]         # See CLAUDE_CODE_AGENTS_SKILLS.md
 ```
 
 **Workflows** (3 total):
@@ -554,6 +554,6 @@ To leverage full power:
 
 ---
 
-**Last Updated**: 2025-12-22
-**Architecture Version**: 1.0
+**Last Updated**: 2026-01-09
+**Architecture Version**: 1.1
 **Complexity**: 4-layer system
