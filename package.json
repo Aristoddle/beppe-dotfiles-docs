@@ -26,5 +26,8 @@
   "homepage": "https://github.com/Aristoddle/beppe-system-bootstrap#readme",
   "devDependencies": {
     "vitepress": "^1.3.4"
+  },
+  "dependencies": {
+    "@hyperdx/browser": "^0.22.0"
   }
 }

@@ -4,7 +4,7 @@ const base = '/beppe-dotfiles-docs/'
 
 export default defineConfig({
   title: "Beppe's System Bootstrap",
-  description: 'Zero‑friction dotfiles with agents, secrets, and a modern CLI stack.',
+  description: 'Zero-friction dotfiles with agents, secrets, and a modern CLI stack.',
   lang: 'en-US',
   base,
   head: [
@@ -23,6 +23,7 @@ export default defineConfig({
       { text: 'Setup', link: '/SETUP' },
       { text: 'Agents', link: '/CLAUDE_CODE_AGENTS_SKILLS' },
       { text: 'Troubleshooting', link: '/TROUBLESHOOTING' },
+      { text: 'Sign In', link: '/login' },
       {
         text: 'Version',
         items: [
@@ -57,8 +58,7 @@ export default defineConfig({
           { text: 'Architecture', link: '/ARCHITECTURE' },
           { text: 'Dotfiles Standards', link: '/DOTFILES_STANDARDS' },
           { text: 'Platform Differences', link: '/PLATFORM_DIFFERENCES' },
-          { text: 'Testing & Quality', link: '/TESTING' }
-          ,
+          { text: 'Testing & Quality', link: '/TESTING' },
           { text: 'Tools Reference', link: '/TOOLS' }
         ]
       },
@@ -68,6 +68,13 @@ export default defineConfig({
           { text: 'Troubleshooting', link: '/TROUBLESHOOTING' },
           { text: 'Recovery Quick Reference', link: '/RECOVERY_QUICK_REFERENCE' },
           { text: 'SSH Auth', link: '/SSH_AUTH' }
+        ]
+      },
+      {
+        text: 'Observability',
+        items: [
+          { text: 'Sign In', link: '/login' },
+          { text: 'ClickStack Demo', link: '/clickstack-demo' }
         ]
       },
       {
