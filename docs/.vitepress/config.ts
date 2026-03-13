@@ -35,9 +35,10 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: 'Onboarding',
+        text: 'Getting Started',
         items: [
           { text: 'Landing', link: '/' },
+          { text: 'Sign In', link: '/login' },
           { text: 'Quickstart', link: '/QUICKSTART' },
           { text: 'Setup', link: '/SETUP' },
           { text: 'ChezMoi Guide', link: '/CHEZMOI_GUIDE' },
@@ -59,7 +60,8 @@ export default defineConfig({
           { text: 'Dotfiles Standards', link: '/DOTFILES_STANDARDS' },
           { text: 'Platform Differences', link: '/PLATFORM_DIFFERENCES' },
           { text: 'Testing & Quality', link: '/TESTING' },
-          { text: 'Tools Reference', link: '/TOOLS' }
+          { text: 'Tools Reference', link: '/TOOLS' },
+          { text: 'Observability (ClickStack)', link: '/clickstack-demo' }
         ]
       },
       {
@@ -68,13 +70,6 @@ export default defineConfig({
           { text: 'Troubleshooting', link: '/TROUBLESHOOTING' },
           { text: 'Recovery Quick Reference', link: '/RECOVERY_QUICK_REFERENCE' },
           { text: 'SSH Auth', link: '/SSH_AUTH' }
-        ]
-      },
-      {
-        text: 'Observability',
-        items: [
-          { text: 'Sign In', link: '/login' },
-          { text: 'ClickStack Demo', link: '/clickstack-demo' }
         ]
       },
       {
